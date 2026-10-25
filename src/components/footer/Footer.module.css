@@ -1,0 +1,478 @@
+/*
+ * Footer.module.css
+ * Premium, polished footer styles for MetaSkillGroup.
+ * 5-Column desktop layout (Brand, 3 Nav, Keep In Touch).
+ */
+
+.footer {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  padding-block: var(--space-64);
+}
+
+.inner {
+  padding-inline: var(--space-32);
+  margin-inline: auto;
+  max-width: 1200px;
+}
+
+/* ── Main Grid (5 Columns on Desktop) ────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr) 1.2fr;
+  gap: var(--space-32);
+  margin-bottom: var(--space-64);
+  align-items: start;
+}
+
+/* This allows FooterLinks columns to be direct children of the grid */
+.navColumns {
+  display: contents;
+}
+
+.navColumn {
+  display: block;
+}
+
+/* ── Brand Column ───────────────────────────────────────────────────────── */
+.brandContactColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.brandLogoLink {
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: var(--space-8);
+}
+
+.brandLogoImg {
+  max-height: 80px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.brandTagline {
+  font-size: var(--text-14);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+}
+
+.brandDescription {
+  font-size: var(--text-15);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-soft);
+  max-width: 320px;
+  margin: 0;
+}
+
+/* ── Nav Columns ─────────────────────────────────────────────────────────── */
+.navHeading {
+  font-size: var(--text-16);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: var(--space-20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  list-style: none;
+  padding: 0;
+}
+
+.navLink {
+  font-size: var(--text-14);
+  color: var(--color-ink-soft);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: var(--color-ink);
+}
+
+.navChevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-ink-soft);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.navChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Hide chevrons on desktop */
+@media (min-width: 768px) {
+  .navChevron {
+    display: none;
+  }
+  .navHeading {
+    cursor: default;
+  }
+}
+
+/* ── Column 5: Keep In Touch ───────────────────────────────────────────────── */
+.keepInTouch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.newsletter {
+  display: block;
+}
+
+.newsletterHeading {
+  font-size: var(--text-16);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-tight);
+}
+
+.newsletterSubtext {
+  font-size: var(--text-13);
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-16);
+  line-height: var(--leading-normal);
+}
+
+.newsletterLabel {
+  display: block;
+  font-size: var(--text-14);
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: var(--space-8);
+}
+
+.newsletterInputRow {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: var(--space-12);
+  font-size: var(--text-14);
+  background: var(--color-ground-3);
+  color: var(--color-ink);
+  border: var(--border-medium);
+  border-radius: var(--radius-sm);
+  height: 44px;
+}
+
+.newsletterButton {
+  padding: var(--space-12) var(--space-20);
+  font-weight: 600;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-fast) var(--ease);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.newsletterButton:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.newsletterPrivacy {
+  margin-top: var(--space-12);
+  font-size: var(--text-11);
+  color: var(--color-ink-xsoft);
+  line-height: var(--leading-normal);
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.socialHeading {
+  font-size: var(--text-16);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 0;
+  line-height: var(--leading-tight);
+}
+
+.socialList {
+  display: flex;
+  gap: var(--space-12);
+  list-style: none;
+  padding: 0;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-ink-soft);
+  border-radius: var(--radius-full);
+  background: var(--color-ground-3);
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.socialLink:hover,
+.socialLink:focus-visible {
+  color: var(--color-ink);
+  background: var(--color-accent);
+}
+
+/* ── Contact Details ────────────────────────────────────────────────────────── */
+.contactBlock {
+  font-style: normal;
+  display: block;
+  line-height: var(--leading-normal);
+}
+
+.colHeading {
+  font-size: var(--text-16);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-12);
+  font-style: normal;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  list-style: none;
+  padding: 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  font-style: normal;
+  line-height: var(--leading-normal);
+}
+
+.contactItem span {
+  font-weight: 400;
+}
+
+.contactIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactLink,
+.contactAddress {
+  font-size: var(--text-14);
+  color: var(--color-ink-soft);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* ── Lower Section ────────────────────────────────────────────────────────── */
+.lowerSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+.divider {
+  border: 0;
+  border-top: var(--border-subtle);
+  width: 100%;
+}
+
+.trustBlock {
+  display: flex;
+  justify-content: center;
+}
+
+.trustRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-48);
+  flex-wrap: wrap;
+}
+
+.trustBadgeList {
+  display: flex;
+  gap: var(--space-32);
+  list-style: none;
+  padding: 0;
+}
+
+.trustBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--text-14);
+  color: var(--color-ink-soft);
+}
+
+.paymentSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.paymentLabel {
+  font-size: var(--text-12);
+  font-weight: 600;
+  color: var(--color-ink-xsoft);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.paymentList {
+  display: flex;
+  gap: var(--space-12);
+  list-style: none;
+  padding: 0;
+}
+
+.paymentPill {
+  font-size: var(--text-13);
+  color: var(--color-ink-soft);
+}
+
+/* ── Bottom Bar ──────────────────────────────────────────────────────────── */
+.bottomBar {
+  padding-block: var(--space-24);
+}
+
+.bottomBarInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.copyright {
+  font-size: var(--text-13);
+  color: var(--color-ink-soft);
+}
+
+.legalList {
+  display: flex;
+  gap: var(--space-24);
+  list-style: none;
+  padding: 0;
+}
+
+.legalLink {
+  font-size: var(--text-13);
+  color: var(--color-ink-soft);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.legalLink:hover,
+.legalLink:focus-visible {
+  color: var(--color-ink);
+}
+
+/* ── Back to Top ─────────────────────────────────────────────────────────── */
+.backToTop {
+  position: fixed;
+  right: var(--space-24);
+  bottom: var(--space-24);
+  padding: var(--space-12);
+  background: var(--color-accent);
+  color: var(--color-surface);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(24px);
+  transition: all var(--dur-fast) var(--ease);
+  z-index: 10;
+}
+
+.backToTop.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1.2fr repeat(3, 1fr) 1fr;
+    gap: var(--space-32);
+  }
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-32);
+  }
+  .brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+  .brandDescription {
+    max-width: 600px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .bottomBarInner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-20);
+  }
+  .legalList {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .navList {
+    display: none;
+  }
+  .navListOpen {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
