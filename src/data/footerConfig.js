@@ -19,7 +19,7 @@ export const footerConfig = {
       'A software company in Dehradun, India. We build web apps, mobile apps and backends for clients, run a remote developer internship, and publish ready-made code on our marketplace.',
     logo: {
       text: 'MetaSkillGroup',
-      src: '/meta-skill logo.png',
+      src: '/metaskill-logo.png',
       alt: 'MetaSkillGroup',
       href: 'https://metaskillgroup.example/',
     },
